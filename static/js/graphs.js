@@ -14,8 +14,9 @@ function makeGraphs(error, timeData) {
     });
     
     trust_selector(ndx);
-    wait_per_month(ndx);
+    wait_per_year(ndx);
     longest_wait(ndx);
+    wait_per_type(ndx);
     
     
     dc.renderAll();
@@ -32,7 +33,7 @@ function trust_selector(ndx) {
         .promptText("Location");
 }
 
-function wait_per_month(ndx) {
+function wait_per_year(ndx) {
     var colour = d3.scale.ordinal()
         .range(["red"]);
     
@@ -73,3 +74,21 @@ function longest_wait(ndx) {
         .othersGrouper(false);
 }
 
+function wait_per_type(ndx) {
+    
+    var waitDim = ndx.dimension(dc.pluck("Type"));
+    var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
+    
+    dc.barChart('#wait-series-chart')
+        .dimension(waitDim)
+        .group(waitGroup)
+        .width(700)
+        .height(550)
+        .x(d3.scale.ordinal())
+        .xAxisLabel("Year")
+        .xUnits(dc.units.ordinal)
+        .brushOn(false)
+        .elasticY(true)
+        .margins({top: 30, left: 50, bottom: 30, right: 20})
+        .transitionDuration(500);
+}
