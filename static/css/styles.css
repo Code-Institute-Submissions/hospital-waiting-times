@@ -1,0 +1,11 @@
+body {
+   font-family: 'Alegreya SC', serif;
+   font-weight: bold;
+}
+
+
+#month-line-chart > svg > g > g.axis.x > g > text {
+   text-anchor: start !important;
+   transform: rotate(60deg);
+   
+}
