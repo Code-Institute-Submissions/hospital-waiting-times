@@ -89,7 +89,7 @@ function wait_per_month(ndx) {
     dc.lineChart("#month-line-chart")
         .dimension(waitDim)
         .group(waitGroup)
-        .width(1000)
+        .width(1100)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(false)
