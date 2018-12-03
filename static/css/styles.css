@@ -198,12 +198,58 @@ body {
    border-bottom: 2px solid gray;
    margin-top: 20px;
 }
+
+.chart-container,
+.chart-container-1 {
+   background-color: rgba(0, 0, 0, 0.9);
+}
 /*------------------------------------------------------General*/
+
+/*------------------------------------------------------Number Display*/
+
+#wait-count {
+   color: #ffffff;
+   font-weight: bold;
+}
 
 /*------------------------------------------------------Line Chart*/
 
 #month-line-chart>svg>g>g.axis.x>g>text {
    text-anchor: end !important;
    transform: rotate(-45deg);
+   fill: #ffffff;
+   font-weight: bold;
+   padding-right: 10px;
+}
 
+#month-line-chart > svg > g > text.x-axis-label {
+   fill: #ffffff;
+}
+
+#month-line-chart > svg > g > g.axis.y>g>text {
+   fill: #ffffff;
+   font-weight: bold;
+}
+
+#month-line-chart > svg > g > text.y-axis-label.y-label {
+   fill: #ffffff;
+   font-weight: bold;
+}
+
+#month-line-chart > svg > g > g.axis.x > g {
+   padding-right: 5px;
+}
+
+#wait-stacked-chart>svg>g>g.axis.x>g>text {
+   fill: #fff;
+   font-weight: bold;
+}
+
+#wait-stacked-chart > svg > g> text {
+   fill: #fff;
+   font-weight: bold;
+}
+
+#wait-row-chart > svg > g > g.row > text {
+   fill: #000;
 }

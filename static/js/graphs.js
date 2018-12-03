@@ -80,7 +80,7 @@ function total_wait_over_time(ndx) {
 
 function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
-        .range(["pink"]);
+        .range(["forestGreen"]);
 
     var waitDim = ndx.dimension(dc.pluck("MthAndYrCode"));
     var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
