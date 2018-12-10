@@ -21,6 +21,7 @@ function makeGraphs(error, timeData) {
     wait_per_type(ndx);
     wait_per_trust_per_year(ndx);
     wait_per_year(ndx);
+    
 
 
     dc.renderAll();
@@ -80,7 +81,7 @@ function total_wait_over_time(ndx) {
 
 function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
-        .range(["forestGreen"]);
+        .range(["#EBC944"]);
 
     var waitDim = ndx.dimension(dc.pluck("MthAndYrCode"));
     var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
@@ -135,8 +136,8 @@ function wait_per_type(ndx) {
     dc.pieChart('#type-pie-chart')
         .dimension(waitDim)
         .group(waitGroup)
-        .width(700)
-        .height(550)
+        .width(400)
+        .height(400)
         .radius(200)
         .innerRadius(20)
         .transitionDuration(500);
@@ -169,7 +170,7 @@ function wait_per_trust_per_year(ndx) {
         .elasticY(true)
         .margins({top: 20, left: 50, bottom: 50, right: 200})
         .legend(dc.legend().x(850).y(170).itemHeight(15).gap(5))
-        .yAxis().ticks(10);
+        .yAxisLabel("Total Combined Wait in Hours");
 }
 
 /////////////////////////////////////////////////////////Wait per Trust Stacked Bar Chart
@@ -191,3 +192,4 @@ function wait_per_year(ndx) {
 }
 
 /////////////////////////////////////////////////////////Wait per Year Pie Chart
+
