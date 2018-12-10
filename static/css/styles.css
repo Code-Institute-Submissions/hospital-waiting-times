@@ -1,6 +1,7 @@
 body {
    font-family: 'Alegreya SC', serif;
-   font-weight: normal;
+   font-weight: bold;
+   font-size: medium;
    background: url(../images/N.I.A.S-Logo.png) no-repeat center center fixed;
    background-size: contain;
    color: #EBC944;
@@ -212,14 +213,39 @@ body {
 
 .dc-chart .pie-slice {
    fill: #000000;
-   font-weight: 700;
+   font-size: medium;
    text-align: center;
 }
 
 .section-heading {
-   color: rgb(8, 38, 68);
+   color: #EBC944;
+    background-color: rgba(8, 38, 68, 0.7);
 }
+
+.h5 {
+   margin-top: 5px;
+}
+
 /*------------------------------------------------------General*/
+
+/*------------------------------------------------------Counter*/
+
+#trust-menu {
+   float: none !important;
+   font-size: 30px;
+   padding: 16px 50px;
+}
+
+/*------------------------------------------------------Counter*/
+
+/*------------------------------------------------------Counter*/
+
+.counter {
+   font-size: 50px;
+   padding: 16px 50px;
+}
+
+/*------------------------------------------------------Counter*/
 
 /*------------------------------------------------------Number Display*/
 
