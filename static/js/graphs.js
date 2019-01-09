@@ -4,13 +4,15 @@ queue()
 
 function makeGraphs(error, timeData) {
     var ndx = crossfilter(timeData);
+    
+    var dateFormat = d3.time.format("%B %Y");
 
     timeData.forEach(function(d) {
         d.Total_sum = parseInt(d["Total_sum"]);
         d.FourAndUnder_sum = parseInt(d["FourAndUnder_sum"]);
         d.FiveToTwelve_sum = parseInt(d["FiveToTwelve_sum"]);
         d.OverTwelve_sum = parseInt(d["OverTwelve_sum"]);
-            
+        d.MthAndYrCode = dateFormat.parse(d["MthAndYrCode"]);
 
     });
 
@@ -83,8 +85,13 @@ function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
         .range(["#EBC944"]);
 
-    var waitDim = ndx.dimension(dc.pluck("MthAndYrCode"));
-    var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
+    var waitDim = ndx.dimension(function (d) {
+        return d["MthAndYrCode"];
+    });
+    var waitGroup = waitDim.group().reduce();
+    
+    var minDate = waitDim.bottom(1)[0]["MthAndYrCode"];
+    var maxDate = waitDim.top(1)[0]["MthAndYrCode"];
 
 
     dc.lineChart("#month-line-chart")
@@ -94,7 +101,7 @@ function wait_per_month(ndx) {
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(false)
-        .x(d3.scale.ordinal())
+        .x(d3.time.scale().domain([minDate, maxDate]))
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Year")
         .yAxisLabel("Total wait (hrs)")
