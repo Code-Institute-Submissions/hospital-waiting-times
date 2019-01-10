@@ -256,10 +256,7 @@ body {
 /*------------------------------------------------------Line Chart*/
 
 #month-line-chart>svg>g>g.axis.x>g>text {
-   text-anchor: start !important;
-   transform: rotate(90deg);
    font-weight: 400;
-   float: right;
 }
 
 .chart-container-1 {

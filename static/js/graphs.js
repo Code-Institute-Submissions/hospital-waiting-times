@@ -5,14 +5,14 @@ queue()
 function makeGraphs(error, timeData) {
     var ndx = crossfilter(timeData);
     
-    var dateFormat = d3.time.format("%B %Y");
+    
 
     timeData.forEach(function(d) {
         d.Total_sum = parseInt(d["Total_sum"]);
         d.FourAndUnder_sum = parseInt(d["FourAndUnder_sum"]);
         d.FiveToTwelve_sum = parseInt(d["FiveToTwelve_sum"]);
         d.OverTwelve_sum = parseInt(d["OverTwelve_sum"]);
-        d.MthAndYrCode = dateFormat.parse(d["MthAndYrCode"]);
+        
 
     });
 
@@ -23,6 +23,7 @@ function makeGraphs(error, timeData) {
     wait_per_type(ndx);
     wait_per_trust_per_year(ndx);
     wait_per_year(ndx);
+    wait_each_year(ndx);
     
 
 
@@ -85,23 +86,46 @@ function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
         .range(["#EBC944"]);
 
-    var waitDim = ndx.dimension(function (d) {
-        return d["MthAndYrCode"];
-    });
-    var waitGroup = waitDim.group().reduce();
+    var monthDim = ndx.dimension(dc.pluck("Month"));
+    var monthGroup = monthDim.group().reduceSum(dc.pluck("Total_sum"));
     
-    var minDate = waitDim.bottom(1)[0]["MthAndYrCode"];
-    var maxDate = waitDim.top(1)[0]["MthAndYrCode"];
-
-
+    
     dc.lineChart("#month-line-chart")
+        .dimension(monthDim)
+        .group(monthGroup)
+        .width(1100)
+        .height(400)
+        .margins({ top: 30, left: 50, bottom: 50, right: 20 })
+        .brushOn(false)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel("Month")
+        .yAxisLabel("Total wait (hrs)")
+        .elasticY(true)
+        .transitionDuration(500)
+        .colors(colour);
+}
+
+/////////////////////////////////////////////////////////Wait per Month Line Graph
+
+/////////////////////////////////////////////////////////Wait per Year Line Graph
+
+function wait_each_year(ndx) {
+    var colour = d3.scale.ordinal()
+        .range(["#EBC944"]);
+
+    var waitDim = ndx.dimension(dc.pluck("Year"));
+    var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
+    
+    
+    dc.lineChart("#year-line-chart")
         .dimension(waitDim)
         .group(waitGroup)
         .width(1100)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(false)
-        .x(d3.time.scale().domain([minDate, maxDate]))
+        .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Year")
         .yAxisLabel("Total wait (hrs)")
@@ -110,7 +134,7 @@ function wait_per_month(ndx) {
         .colors(colour);
 }
 
-/////////////////////////////////////////////////////////Wait per Month Line Graph
+/////////////////////////////////////////////////////////Wait per Year Line Graph
 
 /////////////////////////////////////////////////////////Longest Wait Row Chart
 
@@ -137,7 +161,7 @@ function longest_wait(ndx) {
 
 function wait_per_type(ndx) {
 
-    var waitDim = ndx.dimension(dc.pluck("Type"));
+    var waitDim = ndx.dimension(dc.pluck("Month"));
     var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
 
     dc.pieChart('#type-pie-chart')
