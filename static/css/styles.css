@@ -276,7 +276,7 @@ body {
 
 /*------------------------------------------------------Media Queries*/
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
    .chart-container-1 {
       overflow: hidden;
       overflow-x: scroll;
@@ -284,12 +284,51 @@ body {
    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
    .chart-container-2 {
       overflow: hidden;
       overflow-x: scroll;
       padding-left: 25px;
    }
 }
+
+@media (max-width: 767px) {
+   .section-heading {
+      width: 75%;
+      font-size: 30px;
+   }
+}
+
+@media (max-width: 767px) {
+   .chart-title,
+   .chart-container,
+   .chart-container-1,
+   .chart-container-2 {
+      width: 75%; 
+      
+   }
+   
+}
+
+@media (max-width: 767px) {
+   body {
+      width: 415px;
+   }
+}
+
+@media (max-width: 767px) {
+   #trust-menu {
+      float: none !important;
+      padding: 16px 25px;
+   }
+}
+
+@media (max-width: 767px) {
+   #year-pie-chart {
+      float: none !important;
+      padding: 16px 25px;
+   }
+}
+
 
 /*------------------------------------------------------Media Queries*/

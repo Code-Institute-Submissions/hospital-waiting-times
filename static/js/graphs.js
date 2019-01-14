@@ -89,10 +89,10 @@ function wait_per_month(ndx) {
     var monthGroup = monthDim.group().reduceSum(dc.pluck("Total_sum"));
     
     
-    dc.barChart("#month-line-chart")
+    dc.barChart("#month-bar-chart")
         .dimension(monthDim)
         .group(monthGroup)
-        .width(1100)
+        .width(800)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(false)
@@ -120,10 +120,10 @@ function wait_each_year(ndx) {
     dc.lineChart("#year-line-chart")
         .dimension(waitDim)
         .group(waitGroup)
-        .width(1100)
+        .width(800)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
-        .brushOn(false)
+        .brushOn(true)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Year")
@@ -145,8 +145,8 @@ function longest_wait(ndx) {
     dc.rowChart("#wait-row-chart")
         .dimension(lonDim)
         .group(lonGroup)
-        .width(500)
-        .height(600)
+        .width(400)
+        .height(400)
         .title(function(d) { return (d.key + " : " + d.value + " Waiting Time in Hours"); })
         .transitionDuration(500)
         .elasticX(true)
@@ -168,7 +168,7 @@ function wait_per_trust_per_year(ndx) {
     
     
     dc.barChart('#wait-stacked-chart')
-        .width(1000)
+        .width(800)
         .height(400)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
@@ -181,7 +181,7 @@ function wait_per_trust_per_year(ndx) {
         .transitionDuration(500)
         .elasticY(true)
         .margins({top: 20, left: 50, bottom: 50, right: 200})
-        .legend(dc.legend().x(850).y(170).itemHeight(15).gap(5))
+        .legend(dc.legend().x(650).y(170).itemHeight(15).gap(5))
         .yAxisLabel("Total Combined Wait in Hours");
 }
 
@@ -190,7 +190,7 @@ function wait_per_trust_per_year(ndx) {
 /////////////////////////////////////////////////////////Wait per Year Pie Chart
 
 function wait_per_year(ndx) {
-    var monthDim = ndx.dimension(dc.pluck("Year"));
+    var monthDim = ndx.dimension(dc.pluck("Trust"));
     var monthGroup = monthDim.group().reduceSum(dc.pluck("Total_sum"));
     
     dc.pieChart("#year-pie-chart")
@@ -198,8 +198,8 @@ function wait_per_year(ndx) {
         .group(monthGroup)
         .radius(200)
         .innerRadius(20)
-        .width(400)
-        .height(400)
+        .width(300)
+        .height(300)
         .transitionDuration(500);
 }
 
