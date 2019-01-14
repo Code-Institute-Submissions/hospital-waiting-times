@@ -20,7 +20,6 @@ function makeGraphs(error, timeData) {
     total_wait_over_time(ndx);
     wait_per_month(ndx);
     longest_wait(ndx);
-    wait_per_type(ndx);
     wait_per_trust_per_year(ndx);
     wait_per_year(ndx);
     wait_each_year(ndx);
@@ -84,13 +83,13 @@ function total_wait_over_time(ndx) {
 
 function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
-        .range(["#EBC944"]);
+        .range(["violet"]);
 
     var monthDim = ndx.dimension(dc.pluck("Month"));
     var monthGroup = monthDim.group().reduceSum(dc.pluck("Total_sum"));
     
     
-    dc.lineChart("#month-line-chart")
+    dc.barChart("#month-line-chart")
         .dimension(monthDim)
         .group(monthGroup)
         .width(1100)
@@ -112,7 +111,7 @@ function wait_per_month(ndx) {
 
 function wait_each_year(ndx) {
     var colour = d3.scale.ordinal()
-        .range(["#EBC944"]);
+        .range(["magenta"]);
 
     var waitDim = ndx.dimension(dc.pluck("Year"));
     var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
@@ -129,6 +128,7 @@ function wait_each_year(ndx) {
         .xUnits(dc.units.ordinal)
         .xAxisLabel("Year")
         .yAxisLabel("Total wait (hrs)")
+        .renderDataPoints(true)
         .elasticY(true)
         .transitionDuration(500)
         .colors(colour);
@@ -156,25 +156,6 @@ function longest_wait(ndx) {
 }
 
 /////////////////////////////////////////////////////////Longest Wait Row Chart
-
-/////////////////////////////////////////////////////////Wait per A&E Category Type
-
-function wait_per_type(ndx) {
-
-    var waitDim = ndx.dimension(dc.pluck("Month"));
-    var waitGroup = waitDim.group().reduceSum(dc.pluck("Total_sum"));
-
-    dc.pieChart('#type-pie-chart')
-        .dimension(waitDim)
-        .group(waitGroup)
-        .width(400)
-        .height(400)
-        .radius(200)
-        .innerRadius(20)
-        .transitionDuration(500);
-}
-
-/////////////////////////////////////////////////////////Wait per A&E Category Type
 
 /////////////////////////////////////////////////////////Wait per Trust Stacked Bar Chart
 
