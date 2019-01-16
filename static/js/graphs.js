@@ -20,7 +20,7 @@ function makeGraphs(error, timeData) {
     total_wait_over_time(ndx);
     wait_per_month(ndx);
     longest_wait(ndx);
-    wait_per_trust_per_year(ndx);
+    wait_per_group_per_year(ndx);
     wait_per_year(ndx);
     wait_each_year(ndx);
     
@@ -38,7 +38,7 @@ function trust_selector(ndx) {
         .dimension(trustDim)
         .group(group)
         .title(function(d) { return d.key; })
-        .promptText("Health Trust");
+        .promptText("Choose a Health Trust");
 }
 
 /////////////////////////////////////////////////////////Trust Selector
@@ -79,7 +79,7 @@ function total_wait_over_time(ndx) {
 
 /////////////////////////////////////////////////////////Total Wait Number Display
 
-/////////////////////////////////////////////////////////Wait per Month Line Graph
+/////////////////////////////////////////////////////////Wait per Month Bar Chart
 
 function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
@@ -92,7 +92,7 @@ function wait_per_month(ndx) {
     dc.barChart("#month-bar-chart")
         .dimension(monthDim)
         .group(monthGroup)
-        .width(800)
+        .width(450)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(false)
@@ -105,7 +105,7 @@ function wait_per_month(ndx) {
         .colors(colour);
 }
 
-/////////////////////////////////////////////////////////Wait per Month Line Graph
+/////////////////////////////////////////////////////////Wait per Month Bar Chart
 
 /////////////////////////////////////////////////////////Wait per Year Line Graph
 
@@ -120,7 +120,7 @@ function wait_each_year(ndx) {
     dc.lineChart("#year-line-chart")
         .dimension(waitDim)
         .group(waitGroup)
-        .width(800)
+        .width(500)
         .height(400)
         .margins({ top: 30, left: 50, bottom: 50, right: 20 })
         .brushOn(true)
@@ -145,7 +145,7 @@ function longest_wait(ndx) {
     dc.rowChart("#wait-row-chart")
         .dimension(lonDim)
         .group(lonGroup)
-        .width(400)
+        .width(500)
         .height(400)
         .title(function(d) { return (d.key + " : " + d.value + " Waiting Time in Hours"); })
         .transitionDuration(500)
@@ -157,9 +157,9 @@ function longest_wait(ndx) {
 
 /////////////////////////////////////////////////////////Longest Wait Row Chart
 
-/////////////////////////////////////////////////////////Wait per Trust Stacked Bar Chart
+/////////////////////////////////////////////////////////Wait per Group Stacked Bar Chart
 
-function wait_per_trust_per_year(ndx) {
+function wait_per_group_per_year(ndx) {
     var wpyDim = ndx.dimension(dc.pluck("Year"));
     var wpyGroup = wpyDim.group().reduceSum(dc.pluck("FourAndUnder_sum"));
     var wpyGroup2 = wpyDim.group().reduceSum(dc.pluck("FiveToTwelve_sum"));
@@ -168,7 +168,7 @@ function wait_per_trust_per_year(ndx) {
     
     
     dc.barChart('#wait-stacked-chart')
-        .width(800)
+        .width(600)
         .height(400)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
@@ -181,11 +181,11 @@ function wait_per_trust_per_year(ndx) {
         .transitionDuration(500)
         .elasticY(true)
         .margins({top: 20, left: 50, bottom: 50, right: 200})
-        .legend(dc.legend().x(650).y(170).itemHeight(15).gap(5))
+        .legend(dc.legend().x(400).y(170).itemHeight(15).gap(5))
         .yAxisLabel("Total Combined Wait in Hours");
 }
 
-/////////////////////////////////////////////////////////Wait per Trust Stacked Bar Chart
+/////////////////////////////////////////////////////////Wait per Group Stacked Bar Chart
 
 /////////////////////////////////////////////////////////Wait per Year Pie Chart
 
@@ -198,8 +198,8 @@ function wait_per_year(ndx) {
         .group(monthGroup)
         .radius(200)
         .innerRadius(20)
-        .width(300)
-        .height(300)
+        .width(275)
+        .height(275)
         .transitionDuration(500);
 }
 

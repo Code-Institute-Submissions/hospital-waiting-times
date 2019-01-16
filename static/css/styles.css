@@ -231,6 +231,7 @@ body {
 #trust-menu {
    float: none !important;
    padding: 16px 50px;
+   font-weight: bold;
 }
 
 /*------------------------------------------------------Counter*/
@@ -252,14 +253,22 @@ body {
    font-size: 500;
 }
 
-/*------------------------------------------------------Line Chart*/
+/*------------------------------------------------------Number Display*/
 
-#month-line-chart>svg>g>g.axis.x>g>text {
-   font-weight: 400;
+/*------------------------------------------------------Month Bar Chart*/
+
+#month-bar-chart>svg>g>g.axis.x>g>text {
+   text-anchor: end!important;
+   transform: rotate(-60deg);
+   font-weight: bold;
 }
 
-.chart-container-1 {
-   padding-left: 20px;
+/*------------------------------------------------------Month Bar Chart*/
+
+/*------------------------------------------------------Line Chart*/
+
+#year-line-chart>svg>g>g.axis.x>g>text {
+   font-weight: 400;
 }
 
 /*------------------------------------------------------Line Chart*/
