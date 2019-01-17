@@ -250,7 +250,7 @@ body {
 #wait-count {
    color: #000000;
    font-weight: bolder;
-   font-size: 500;
+   font-size: 2.5em;
 }
 
 /*------------------------------------------------------Number Display*/
@@ -282,6 +282,23 @@ body {
 }
 
 /*------------------------------------------------------Row Chart*/
+
+/*------------------------------------------------------Footer*/
+
+footer>div>div>p {
+   font-size: 15px;
+   text-align: right;
+   padding-top: 11px;
+}
+
+footer>div>div>p>a>i {
+   padding-left: 8px;
+}
+
+.fa {
+   font-size: 25px !important;
+}
+/*------------------------------------------------------Footer*/
 
 /*------------------------------------------------------Media Queries*/
 
