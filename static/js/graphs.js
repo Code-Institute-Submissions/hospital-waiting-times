@@ -84,7 +84,11 @@ function total_wait_over_time(ndx) {
 function wait_per_month(ndx) {
     var colour = d3.scale.ordinal()
         .range(["violet"]);
-
+    
+    let scale = d3.scale.ordinal()
+        .domain(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
+        .range([0,1,2,3,4,5,6,7,8,9,10,11]);
+    
     var monthDim = ndx.dimension(dc.pluck("Month"));
     var monthGroup = monthDim.group().reduceSum(dc.pluck("Total_sum"));
     
@@ -102,7 +106,10 @@ function wait_per_month(ndx) {
         .yAxisLabel("Total wait (hrs)")
         .elasticY(true)
         .transitionDuration(500)
-        .colors(colour);
+        .colors(colour)
+        .ordering(function (k) {
+           return scale(k.key);
+         });
 }
 
 /////////////////////////////////////////////////////////Wait per Month Bar Chart
