@@ -190,10 +190,6 @@ body {
    display: inline-block;
 }
 
-.text-center {
-   text-align: center;
-}
-
 .chart-title {
    border-bottom: 2px solid blue;
    margin-top: 20px;
@@ -219,6 +215,7 @@ body {
 
 .section-heading {
    color: #000000;
+   text-align: center;
    
 }
 
@@ -320,7 +317,6 @@ footer>div>div>p>a>i {
 
 @media (max-width: 767px) {
    .section-heading {
-      width: 75%;
       font-size: 30px;
    }
 }
@@ -336,11 +332,7 @@ footer>div>div>p>a>i {
    
 }
 
-@media (max-width: 767px) {
-   body {
-      width: 415px;
-   }
-}
+
 
 @media (max-width: 767px) {
    #trust-menu {
@@ -356,5 +348,11 @@ footer>div>div>p>a>i {
    }
 }
 
-
+@media all and (orientation: landscape) {
+   .chart-title,
+   .chart-container,
+   .chart-container-1,
+   .chart-container-2 {
+      width: 100%; 
+}
 /*------------------------------------------------------Media Queries*/

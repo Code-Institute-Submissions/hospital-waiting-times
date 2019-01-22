@@ -188,7 +188,7 @@ function wait_per_group_per_year(ndx) {
         .transitionDuration(500)
         .elasticY(true)
         .margins({top: 20, left: 50, bottom: 50, right: 200})
-        .legend(dc.legend().x(400).y(170).itemHeight(15).gap(5))
+        .legend(dc.legend().x(420).y(170).itemHeight(15).gap(5))
         .yAxisLabel("Total Combined Wait in Hours");
 }
 

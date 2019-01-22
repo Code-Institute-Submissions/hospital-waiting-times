@@ -5,3 +5,7 @@ $(document).ready(function() {
     }, 3000);
  
 });
+
+$(document).ready(function() {
+    alert("If viewing on mobile, it is recommended you view in landscape");
+});
