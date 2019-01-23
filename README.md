@@ -73,6 +73,7 @@ graphs to be interactive and I would be able to see my interaction with the data
 <li>I checked the link to my github in the footer which is clickable and functional on all devices</li>
 <li>I tried various layouts during the process of creating the dashboard and found that the flow of the screen was better when the four large graphs were side by side in larger screens and underneath eachother on smaller resolutions.</li>
 <li>Throuout the testing process I decided against using a background for the page as I felt that it made the page too busy and the graphs became hard to read.</li>
+<li>During testing I had an issue with parsing the date from my csv file in the MthAndYear column, so I altered the Year column and added a Month column in order to facilitate the creation of the month bar chart and the year line chart.</li>
 </ul>
 
 <h4>The testing for each browser is as follows:</h4>
@@ -158,5 +159,5 @@ Here is the link:<a href= "https://liammcgcistudent.github.io/hospital-waiting-t
 <h2>Credits</h2>
 
 <p>I got inspiration for this project from my own interest in medical tv shows and seeing how long some people have to wait in A&E and wanted to know just how long people were waiting to be treated</p>
-<p>The loading screen was the creation of Peter Tichy (ihatetomatoes) and can be found <a href="https://ihatetomatoes.net/create-custom-preloading-screen/" target="_blank">here</a>
+<p>The loading screen was the creation of Peter Tichy (ihatetomatoes) and can be found <a href="https://ihatetomatoes.net/create-custom-preloading-screen/" target="_blank">here</a>The only changes made to the code were the colours displayed
 <p>The data used in my project was sourced from the opendatani <a href="https://www.opendatani.gov.uk/dataset/emergency-care-waiting-times/resource/525ccf53-d048-452f-8f32-491f575d4134" target="_blank">website</a> and the license to this information can be seen <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">here</a>
