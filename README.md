@@ -24,6 +24,8 @@ graphs to be interactive and I would be able to see my interaction with the data
 
 <h3>Wireframes</h3>
 
+<a href="/images/Wireframe 1.jpg" target="_blank">Wireframe 1</a>
+
 <h2>Features</h2>
 
 <h3>Existing Features</h3>
@@ -70,6 +72,7 @@ graphs to be interactive and I would be able to see my interaction with the data
 <li>I created a reset button in order to reset the currently selected information and it works for all graphs</li>
 <li>I checked the link to my github in the footer which is clickable and functional on all devices</li>
 <li>I tried various layouts during the process of creating the dashboard and found that the flow of the screen was better when the four large graphs were side by side in larger screens and underneath eachother on smaller resolutions.</li>
+<li>Throuout the testing process I decided against using a background for the page as I felt that it made the page too busy and the graphs became hard to read.</li>
 </ul>
 
 <h4>The testing for each browser is as follows:</h4>
@@ -144,4 +147,16 @@ graphs to be interactive and I would be able to see my interaction with the data
 <li>Reset Button - Pass</li>
 </ul>
 
+<h3>Bugs</h3>
+<p>During testing I noticed that when resetting the line graph doesn't have a smooth transition back to its original state in comparisson to the other graphs; I will continue to look for a solution to this.</p>
+
+<h2>Deployment</h2>
+<p>I have pushed the code to a remote repository in GitHub where I have published the site on GitHub Pages.
+
+Here is the link:<a href= "https://liammcgcistudent.github.io/hospital-waiting-times/" target="_blank">https://liammcgcistudent.github.io/hospital-waiting-times/</a></p>
+
 <h2>Credits</h2>
+
+<p>I got inspiration for this project from my own interest in medical tv shows and seeing how long some people have to wait in A&E and wanted to know just how long people were waiting to be treated</p>
+<p>The loading screen was the creation of Peter Tichy (ihatetomatoes) and can be found <a href="https://ihatetomatoes.net/create-custom-preloading-screen/" target="_blank">here</a>
+<p>The data used in my project was sourced from the opendatani <a href="https://www.opendatani.gov.uk/dataset/emergency-care-waiting-times/resource/525ccf53-d048-452f-8f32-491f575d4134" target="_blank">website</a> and the license to this information can be seen <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" target="_blank">here</a>
