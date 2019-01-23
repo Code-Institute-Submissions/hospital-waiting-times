@@ -22,3 +22,58 @@ graphs to be interactive and I would be able to see my interaction with the data
 <li>Encourage/Promote further research by the user in to the subject material being displayed</li>
 </ul>
 
+<h3>Wireframes</h3>
+
+<h2>Features</h2>
+
+<h3>Existing Features</h3>
+
+<ul>
+<li>Health Trust Selector - Allows the user to choose from any of the health trusts in the data and view the statistics related to it.</li>
+<li>Wait Counter - Shows the total waiting time in hours over the ten year period of the study.</li>
+<li>Wait per trust pie chart</li>
+<li>Wait per month bar chart</li>
+<li>Wait per year line chart</li>
+<li>Longest wait row chart - this chart shows which of the hospitals in Northern Ireland have the longest overall waiting time per the ten year study.</li>
+<li>Wait per group stacked bar chart - This chart breaks down the waiting times per year in to the three hour groups from the csv file and shows which group had the longest waiting times.</li>
+<li>Footer - This contains a link to my github account for people to view my other work.</li>
+</ul>
+
+<h3>Features to Implement</h3>
+<ul>
+<li>Trust Series Chart - A series line chart showing the waiting times of the health trusts per year so as to be able to compare which trust has the better record.</li>
+</ul>
+
+<h2>Technologies Used</h2>
+
+<ul>
+<li>Javascript - Used to build charts and utilise the values output by these charts</li>
+<li><a href="https://jquery.com/" target="_blank">Jquery</a> - Used to support loader and alert box; </li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" target="_blank">DC CSS</a> and <a href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.js" target="_blank">DC JS</a> - Used to build charts</li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" target="_blank">D3</a> - Used to build charts</li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js" target="_blank">Crossfilter</a> - Filters data in csv file</li>
+<li><a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" target="_blank">Bootstrap</a> - Supports resposive grid layout</li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js" target="_blank">Queue</a> - Used to load the data</li>
+<li><a href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" target="">Font Awesome</a> - Used for the github icon in the footer</li>
+<li><a href="https://fonts.googleapis.com/css?family=Alegreya+SC:400,500,700,800,900" target="_blank">Google Fonts</a> - Alegreya SC is used throughout the webpage</li>
+</ul>
+
+<h2>Testing</h2>
+
+<ul>
+<li>I used W3C validator to check for errors in HTML and CSS code; no errors were returned.</li>
+<li>JSHint was used to check validity of javascript code, no errors were found</li>
+<li>The dashboard is responsive at all screen resolutions</li>
+    <ul>
+    <li>I created a prompt on load to notify users viewing on mobile devices to use their device in landscape</li>
+    </ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
