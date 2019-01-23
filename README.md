@@ -65,15 +65,83 @@ graphs to be interactive and I would be able to see my interaction with the data
 <li>JSHint was used to check validity of javascript code, no errors were found</li>
 <li>The dashboard is responsive at all screen resolutions</li>
     <ul>
-    <li>I created a prompt on load to notify users viewing on mobile devices to use their device in landscape</li>
+    <li>I created a prompt on load to notify users viewing on mobile devices to use their device in landscape for better viewing of the graphs</li>
     </ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>I created a reset button in order to reset the currently selected information and it works for all graphs</li>
+<li>I checked the link to my github in the footer which is clickable and functional on all devices</li>
+<li>I tried various layouts during the process of creating the dashboard and found that the flow of the screen was better when the four large graphs were side by side in larger screens and underneath eachother on smaller resolutions.</li>
 </ul>
+
+<h4>The testing for each browser is as follows:</h4>
+
+<h4>Chrome</h4>
+
+<ul>
+<li>Selector - Pass</li>
+<li>Counter - Pass</li>
+<li>Trust Pie Chart - Pass</li>
+<li>Month Bar Chart - Pass</li>
+<li>Year Line Chart - Pass</li>
+<li>Longest Wait Row Chart - Pass</li>
+<li>Wait per Group Stacked Bar Chart - Pass</li>
+<li>URL/Link to Github - Pass</li>
+<li>Reset Button - Pass</li>
+</ul>
+
+<h4>Opera</h4>
+
+<ul>
+<li>Selector - Pass</li>
+<li>Counter - Pass</li>
+<li>Trust Pie Chart - Pass</li>
+<li>Month Bar Chart - Pass</li>
+<li>Year Line Chart - Pass</li>
+<li>Longest Wait Row Chart - Pass</li>
+<li>Wait per Group Stacked Bar Chart - Pass</li>
+<li>URL/Link to Github - Pass</li>
+<li>Reset Button - Pass</li>
+</ul>
+
+<h4>Firefox</h4>
+
+<ul>
+<li>Selector - Pass</li>
+<li>Counter - Pass</li>
+<li>Trust Pie Chart - Pass</li>
+<li>Month Bar Chart - Pass</li>
+<li>Year Line Chart - Pass</li>
+<li>Longest Wait Row Chart - Pass</li>
+<li>Wait per Group Stacked Bar Chart - Pass</li>
+<li>URL/Link to Github - Pass</li>
+<li>Reset Button - Pass</li>
+</ul>
+
+<h4>Edge</h4>
+
+<ul>
+<li>Selector - Pass</li>
+<li>Counter - Pass</li>
+<li>Trust Pie Chart - Pass</li>
+<li>Month Bar Chart - Pass</li>
+<li>Year Line Chart - Pass</li>
+<li>Longest Wait Row Chart - Pass</li>
+<li>Wait per Group Stacked Bar Chart - Pass</li>
+<li>URL/Link to Github - Pass</li>
+<li>Reset Button - Pass</li>
+</ul>
+
+<h4>Safari</h4>
+
+<ul>
+<li>Selector - Pass</li>
+<li>Counter - Pass</li>
+<li>Trust Pie Chart - Pass</li>
+<li>Month Bar Chart - Pass</li>
+<li>Year Line Chart - Pass</li>
+<li>Longest Wait Row Chart - Pass</li>
+<li>Wait per Group Stacked Bar Chart - Pass</li>
+<li>URL/Link to Github - Pass</li>
+<li>Reset Button - Pass</li>
+</ul>
+
+<h2>Credits</h2>
